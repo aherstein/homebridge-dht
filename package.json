@@ -5,13 +5,15 @@
   "main": "temperature.js",
   "scripts": {
     "main": "node temperature.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier --write '*.js'"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dht-sensor": "0.0.5",
     "node-dht-sensor": "^0.4.2",
+    "prettier": "^2.0.5",
     "rpio": "^2.1.1"
   }
 }
