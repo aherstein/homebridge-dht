@@ -21,7 +21,7 @@ export = (api: API) => {
 class Temperature implements AccessoryPlugin {
   private readonly log: Logging
   private readonly name: string
-  private readonly scale: string
+  private readonly temperatureUnits: string
 
   private readonly temperatureService: Service
   private readonly informationService: Service
@@ -29,7 +29,7 @@ class Temperature implements AccessoryPlugin {
   constructor(log: Logging, config: AccessoryConfig, api: API) {
     this.log = log
     this.name = config.name
-    this.scale = config.scale || 'c'
+    this.temperatureUnits = config.temperatureUnits || 'c'
 
     this.temperatureService = new hap.Service.Switch(this.name)
 
@@ -40,7 +40,7 @@ class Temperature implements AccessoryPlugin {
           if (!err) {
             const temperature_f = (9 / 5) * temperature + 32
             log.info(`temp: ${temperature}°C (${temperature_f}°F), humidity: ${humidity}%`)
-            callback(undefined, this.scale === 'f' ? temperature_f : temperature)
+            callback(undefined, this.temperatureUnits === 'f' ? temperature_f : temperature)
           }
         })
       })
