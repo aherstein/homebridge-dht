@@ -1,19 +1,38 @@
 {
-  "name": "temperature",
+  "name": "homebridge-dht",
   "version": "1.0.0",
-  "description": "",
-  "main": "temperature.js",
+  "description": "Homebridge plugin for DH11 temperature sensor",
+  "main": "dist/temperature.js",
   "scripts": {
-    "main": "node temperature.js",
+    "clean": "rimraf ./dist",
+    "build": "rimraf ./dist && tsc",
+    "main": "node src/temperature.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prettier": "prettier --write '*.js'"
+    "prettier": "prettier --write '*.ts'"
   },
-  "author": "",
+  "author": "Adam Herstein",
   "license": "ISC",
+  "engines": {
+    "homebridge": ">=1.0.0"
+  },
+  "keywords": [
+    "homebridge-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aherstein/homebridge-dht.git"
+  },
+  "bugs": {
+    "url": "http://github.com/aherstein/homebridge-dht/issues"
+  },
   "dependencies": {
-    "dht-sensor": "0.0.5",
     "node-dht-sensor": "^0.4.2",
-    "prettier": "^2.0.5",
-    "rpio": "^2.1.1"
+    "prettier": "^2.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.13",
+    "homebridge": "^1.1.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.5"
   }
 }
