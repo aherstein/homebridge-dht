@@ -1,0 +1,17 @@
+{
+  "name": "temperature",
+  "version": "1.0.0",
+  "description": "",
+  "main": "temperature.js",
+  "scripts": {
+    "main": "node temperature.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dht-sensor": "0.0.5",
+    "node-dht-sensor": "^0.4.2",
+    "rpio": "^2.1.1"
+  }
+}
